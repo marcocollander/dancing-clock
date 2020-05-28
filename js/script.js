@@ -1,28 +1,38 @@
 function date() {
-  const time = new Date();
+  const date = new Date();
+
+  let currentDate = [date.getDate(), date.getMonth() + 1, date.getFullYear()];
+  currentDate = formatTime(...currentDate);
+
   const boxDate = document.getElementById('box-date');
-  boxDate.innerHTML = time.get
+  boxDate.innerHTML = `${currentDate[0]}.${currentDate[1]}.${currentDate[2]}`;
 
   return function(){
-   let hours = time.getHours();
-   let minutes = time.getMinutes();
-   let secondes = time.getSeconds();
+   let currentTime = [date.getHours(), date.getMinutes(), date.getSeconds()];
+   currentTime = formatTime(...currentTime);
 
-    if (secondes < 10) {
-      secondes = '0' + secondes;
-    }
-  
-    if (minutes < 10) {
-      minutes = '0' + minutes;
-    }
-  
-    if (hours < 10) {
-      hours = '0' + hours;
-    }
     const clock = document.getElementById('clock');
-    clock.innerHTML = hours + ':' + minutes + ':' + secondes;
+    clock.innerHTML = `${currentTime[0]}:${currentTime[1]}:${currentTime[2]}`;
   }
 
+}
+
+function formatTime(timeOne, timeTwo, timeThree) {
+  if (timeOne < 10) {
+    timeOne = '0' + timeOne;
+  }
+
+  if (timeTwo < 10) {
+    timeTwo = '0' + timeTwo;
+  }
+
+  if (timeThree < 10) {
+    timeThree = '0' + timeThree;
+  }
+
+  const arrayTime = [timeOne, timeTwo, timeThree];
+
+  return arrayTime;
 }
 
 date();
