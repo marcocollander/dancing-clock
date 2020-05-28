@@ -1,0 +1,49 @@
+body {
+  background-color: aquamarine
+}
+
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: calc(50% - 250px);
+  top: calc(50% - 250px);
+  width: 500px;
+  height: 500px;
+  border-radius: 250px;
+  background-color: chocolate;
+  text-shadow: 5px 5px 10px grey;
+  font-family: Arial, Helvetica, sans-serif;
+  animation: balance 1s linear infinite;
+}
+
+.clock {
+  font-size: 6rem;
+  color: white;
+}
+
+.box-date {
+  width: 100px;
+  height: 100px;
+  background-color: darkcyan;
+  border-radius: 50%;
+  text-shadow: 5px 5px 10px grey;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+@keyframes balance {
+  0% {
+    transform: translate(0);
+  }
+
+  50% {
+    transform: translate(100px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+
+}
